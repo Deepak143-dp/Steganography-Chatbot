@@ -3,8 +3,12 @@ import os
 from steg import encode_image, decode_image
 
 # If your CSS is under 'ststic' folder, tell Flask about it; better: rename folder to 'static'
+import os
+
 app = Flask(__name__, static_folder="ststic")
+
 UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/")
 def index():
