@@ -99,7 +99,7 @@ This project uses LSB (Least Significant Bit) Steganography to hide message bits
 
 **Deepak Kumar**
 Integrated M.Tech Cyber Security
-VIT Bhopal University
+(VIT Bhopal University)
 
 ## License
 
