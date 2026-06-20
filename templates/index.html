@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steganography Chat</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="title">🔐 Steganography Chatbot</h1>
+
+      <div class="card">
+        <h2>Send Message</h2>
+        <form action="/send" method="post" enctype="multipart/form-data">
+          <input
+            type="text"
+            name="message"
+            placeholder="Enter your secret message..."
+            required
+          />
+          <input
+            type="file"
+            name="image"
+            accept="image/png, image/jpeg"
+            required
+          />
+          <button type="submit">Encode & Download</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Receive Message</h2>
+        <form action="/receive" method="post" enctype="multipart/form-data">
+          <input
+            type="file"
+            name="image"
+            accept="image/png, image/jpeg"
+            required
+          />
+          <button type="submit">Decode</button>
+        </form>
+
+        <p class="output">
+          {{ decoded_message if decoded_message else 'Message: --' }}
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
